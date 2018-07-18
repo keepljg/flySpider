@@ -4,12 +4,12 @@
 # 运行环境
 python3
 # Usage
- from engine.Engine import V1Engine
- from item.item import Item
- from selector.selector import Xpath
- from parse.new_parse import BaseParser, XPathParser, ReParser
- from config import *
- if __name__ == '__main__':
+from engine.Engine import V1Engine
+from item.item import Item
+from selector.selector import Xpath
+from parse.new_parse import BaseParser, XPathParser, ReParser
+from config import *
+if __name__ == '__main__':
     urls = ['https://itunes.apple.com/cn/genre/ios/id36?mt=8']
     urls 是初始urls数组
 	class urlItem(Item):
