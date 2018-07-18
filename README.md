@@ -50,11 +50,17 @@ python3
  
 # config
  """mysql 配置"""
+
 HOST = ''
+
 DATABASE = ''
+
 PORT = 3306
+
 USER = ''
+
 PASSWORD = ''
+
 CHARSET = 'utf8'
 
 """url queue 最大长度"""
