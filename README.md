@@ -4,20 +4,15 @@
 # 运行环境
 python3
 # Usage
-
-
-from engine.Engine import V1Engine
-from item.item import Item
-from selector.selector import Xpath
-from parse.new_parse import BaseParser, XPathParser, ReParser
-
-from config import *
-
-if __name__ == '__main__':
-    """urls 是初始urls数组"""
+ from engine.Engine import V1Engine
+ from item.item import Item
+ from selector.selector import Xpath
+ from parse.new_parse import BaseParser, XPathParser, ReParser
+ from config import *
+ if __name__ == '__main__':
     urls = ['https://itunes.apple.com/cn/genre/ios/id36?mt=8']
-    
-    class urlItem(Item):
+    urls 是初始urls数组
+	class urlItem(Item):
         title = Xpath("//h1/text()[2]")
         async def detail(self, aiomysql_heaper):
             sql = "insert into xxx (title) VALUES (%s)"
@@ -25,7 +20,7 @@ if __name__ == '__main__':
             # aiomysql_heaper.insert_into(sql, params)
             print("title is {}".format(self.title))
             
-    #目前有xpath 和re 解析器 如有其它需求可以直接继承BaseParser 自己封装
+    目前有xpath 和re 解析器 如有其它需求可以直接继承BaseParser 自己封装
     class parse1(XPathParser):
         level = 1
         parseRule = "//div[@class='grid3-column']//ul//li/a/@href"
@@ -58,6 +53,7 @@ PASSWORD = ''
 CHARSET = 'utf8'
 
 """url queue 最大长度"""
+
 URL_QUEUE_MAX_LENGTH = 0
 
 """url retry times"""
