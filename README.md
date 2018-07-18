@@ -4,6 +4,8 @@
 # 运行环境
 python3
 # Usage
+
+
 from engine.Engine import V1Engine
 from item.item import Item
 from selector.selector import Xpath
@@ -59,27 +61,35 @@ CHARSET = 'utf8'
 URL_QUEUE_MAX_LENGTH = 0
 
 """url retry times"""
+
 MAXTRY = 10
 
 """代理池最小值， 小于这个值重新爬取"""
+
 MIN_PROXY_COUNT = 5
 
 """是否使用布隆过滤器"""
+
 IS_USE_BLOOM = False
 
 """协程数"""
+
 MAX_TASKS = 100
 
 """是否使用代理"""
+
 IS_USE_PROXY = False
 
 """控制代理爬取时间"""
+
 CRAWL_PROXY_TIME = 10
 
 """0 表示国内，1表示国外，用国外代理要保证服务器能翻墙"""
+
 PROXY_TYPE = 1
 
 
 """用于验证代理有效性的网站"""
+
 PROXY_VERIFICATION_URL = 'http://baidu.com'
 #PROXY_VERIFICATION_URL = 'https://www.apple.com/shop/bag'
