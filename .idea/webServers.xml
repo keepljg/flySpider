@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="12b33aff-281f-409c-a5b1-aba8531856c9" name="wfCrawler" url="http://192.168.166.11">
+        <fileTransfer host="192.168.166.11" port="58422" rootFolder="/root/wfCrawler" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="58422" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
