@@ -32,7 +32,7 @@ class BaseParser(object):
 
     @classmethod
     async def deal_with_seed(cls, engine, seed, proxy):
-        data = await Fetcher.fetch(seed, engine.session, cls.headers, proxy=proxy)
+        data = await Fetcher.fetch(seed, engine.session, cls.headers, , data_type=seed.data_type, proxy=proxy)
         if data:
             urls = cls.extract_url(data)
             cls.parse_url(urls, engine, seed.level)
