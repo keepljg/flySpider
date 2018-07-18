@@ -46,8 +46,10 @@ python3
     	myEngine.run()
     
 # Seed
- url 种子 维护了url trytimes（重试次数） level（url深度）data_type（html 或者 图片）
- 
+ url 种子 维护了url trytimes（重试次数） 
+ 	       level（url深度）
+	       data_type（html 或者 图片）
+如有其它需求 可自己修改
 # config
  """mysql 配置"""
 
