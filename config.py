@@ -6,11 +6,11 @@ import logging
 import sys
 
 """mysql 配置"""
-HOST = '192.168.182.118'
-DATABASE = 'ios_app'
-PORT = 3973
-USER = 'deve'
-PASSWORD = 'weiphone'
+HOST = ''
+DATABASE = ''
+PORT = 3306
+USER = ''
+PASSWORD = ''
 CHARSET = 'utf8'
 
 """url queue 最大长度"""
