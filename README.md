@@ -46,7 +46,7 @@ if __name__ == '__main__':
 # Seed
  url 种子 维护了url trytimes（重试次数） level（url深度）data_type（html 或者 图片）
  
- #config
+# config
  """mysql 配置"""
 HOST = ''
 DATABASE = ''
@@ -82,4 +82,4 @@ PROXY_TYPE = 1
 
 """用于验证代理有效性的网站"""
 PROXY_VERIFICATION_URL = 'http://baidu.com'
-# PROXY_VERIFICATION_URL = 'https://www.apple.com/shop/bag'
+#PROXY_VERIFICATION_URL = 'https://www.apple.com/shop/bag'
