@@ -3,6 +3,10 @@
 
 # 运行环境
 python3
+
+# Description
+提供初始url 和每一级别url的解析方法以及爬取字段的处理函数即可开始的高效爬虫框架，并了封装好的异步mysql库和避免爬取过快导致本机ip被封的内外的免费代理
+
 # Usage
 	from engine.Engine import V1Engine
 	from item.item import Item
@@ -12,7 +16,7 @@ python3
 	
 	if __name__ == '__main__':
     	urls = ['https://itunes.apple.com/cn/genre/ios/id36?mt=8']
-    	urls 是初始urls数组
+    	#urls 是初始urls数组
 		class urlItem(Item):
         	title = Xpath("//h1/text()[2]")
         	async def detail(self, aiomysql_heaper):
@@ -89,4 +93,5 @@ PROXY_TYPE = 1
 """用于验证代理有效性的网站"""
 
 PROXY_VERIFICATION_URL = 'http://baidu.com'
+
 #PROXY_VERIFICATION_URL = 'https://www.apple.com/shop/bag'
