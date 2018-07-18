@@ -4,41 +4,42 @@
 # 运行环境
 python3
 # Usage
-from engine.Engine import V1Engine
-from item.item import Item
-from selector.selector import Xpath
-from parse.new_parse import BaseParser, XPathParser, ReParser
-from config import *
-if __name__ == '__main__':
-    urls = ['https://itunes.apple.com/cn/genre/ios/id36?mt=8']
-    urls 是初始urls数组
-	class urlItem(Item):
-        title = Xpath("//h1/text()[2]")
-        async def detail(self, aiomysql_heaper):
-            sql = "insert into xxx (title) VALUES (%s)"
-            params = (self.title,)
-            # aiomysql_heaper.insert_into(sql, params)
-            print("title is {}".format(self.title))
+	from engine.Engine import V1Engine
+	from item.item import Item
+	from selector.selector import Xpath
+	from parse.new_parse import BaseParser, XPathParser, ReParser
+	from config import *
+	
+	if __name__ == '__main__':
+    	urls = ['https://itunes.apple.com/cn/genre/ios/id36?mt=8']
+    	urls 是初始urls数组
+		class urlItem(Item):
+        	title = Xpath("//h1/text()[2]")
+        	async def detail(self, aiomysql_heaper):
+            	sql = "insert into xxx (title) VALUES (%s)"
+            	params = (self.title,)
+            	# aiomysql_heaper.insert_into(sql, params)
+            	print("title is {}".format(self.title))
             
-    目前有xpath 和re 解析器 如有其它需求可以直接继承BaseParser 自己封装
-    class parse1(XPathParser):
-        level = 1
-        parseRule = "//div[@class='grid3-column']//ul//li/a/@href"
-        headers = normal
+    	目前有xpath 和re 解析器 如有其它需求可以直接继承BaseParser 自己封装
+    	class parse1(XPathParser):
+        	level = 1
+        	parseRule = "//div[@class='grid3-column']//ul//li/a/@href"
+        	headers = normal
 
-    class parse2(XPathParser):
-        level = 2
-        parseRule = "//div[@id='selectedcontent']//li/a/@href"
-        headers = normal
+    	class parse2(XPathParser):
+        	level = 2
+        	parseRule = "//div[@id='selectedcontent']//li/a/@href"
+        	headers = normal
 
-    class parse3(BaseParser):
-        level = 3
-        headers = normal
-        item = urlItem
+    	class parse3(BaseParser):
+        	level = 3
+        	headers = normal
+        	item = urlItem
 
-    parses = [parse1, parse2, parse3]
-    myEngine = V1Engine(urls, parses)
-    myEngine.run()
+    	parses = [parse1, parse2, parse3]
+    	myEngine = V1Engine(urls, parses)
+    	myEngine.run()
     
 # Seed
  url 种子 维护了url trytimes（重试次数） level（url深度）data_type（html 或者 图片）
